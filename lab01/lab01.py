@@ -11,7 +11,11 @@ def falling(n, k):
     1
     """
     "*** YOUR CODE HERE ***"
-
+    fal_fac = 1
+    for num in range(k):
+        fal_fac *= (n - num)
+    return fal_fac
+    
 
 def divisible_by_k(n, k):
     """
