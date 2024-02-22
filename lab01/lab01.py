@@ -81,4 +81,11 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
-
+    eights = 0
+    while(n > 0):
+        current = n % 10
+        n = n // 10
+        nxt = n % 10
+        if current == 8 and nxt == 8:
+            return True
+    return False
