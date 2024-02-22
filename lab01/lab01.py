@@ -38,7 +38,12 @@ def divisible_by_k(n, k):
     0
     """
     "*** YOUR CODE HERE ***"
-
+    cnt = 0
+    for num in range(1, n+1):
+        if num % k == 0:
+            print(num)
+            cnt += 1
+    return cnt
 
 def sum_digits(y):
     """Sum all the digits of y.
