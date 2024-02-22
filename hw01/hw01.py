@@ -13,10 +13,10 @@ def a_plus_abs_b(a, b):
     3
     """
     if b < 0:
-        f = sub(a, b)
+        f = sub
     else:
-        f = add(a, b)
-    return f
+        f = add
+    return f(a, b)
 
 def a_plus_abs_b_syntax_check():
     """Check that you didn't change the return statement of a_plus_abs_b.
@@ -42,20 +42,7 @@ def two_of_three(i, j, k):
     >>> two_of_three(5, 5, 5)
     50
     """
-    nums = [i, j, k]
-    largest = i
-    for num in nums:
-        if num > largest:
-            largest = num
-
-    for num in nums:
-        if num == largest:
-            nums.remove(num)
-            break
-
-    m, n = nums[0], nums[1]
-    
-    return m * m + n * n
+    return i * i + j * j + k * k - max(i, j, k) * max(i, j, k)
 
 def two_of_three_syntax_check():
     """Check that your two_of_three code consists of nothing but a return statement.
