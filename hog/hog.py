@@ -46,7 +46,22 @@ def boar_brawl(player_score, opponent_score):
     """
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
+    p_digit = player_score % 10
+    def o_f(x):
+        if x < 10:
+            return 0
+        elif x < 100:
+            x = x // 10
+        else:
+            x = x // 10
+            x = x % 10
+        return x
     
+    o_digit = o_f(opponent_score)
+    if o_digit == p_digit:
+        return 1
+    else:
+        return abs(p_digit - o_digit) * 3
     # END PROBLEM 2
 
 
