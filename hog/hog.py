@@ -293,6 +293,17 @@ def max_scoring_num_rolls(dice=six_sided, samples_count=1000):
     """
     # BEGIN PROBLEM 9
     "*** YOUR CODE HERE ***"
+    test_score = []
+    biggest = 0
+    for i in range(10):
+        averaged_dice = make_averaged(roll_dice, samples_count)
+        test_num = averaged_dice(i + 1, dice)
+        test_score.insert(i, test_num)
+        if test_score[i] > biggest:
+            biggest = test_score[i]
+    for num in test_score:
+        if num == biggest:
+            return test_score.index(num) + 1
     # END PROBLEM 9
 
 
