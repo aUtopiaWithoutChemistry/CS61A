@@ -61,6 +61,13 @@ def count_cond(condition):
     8
     """
     "*** YOUR CODE HERE ***"
+    def func(N):
+        total = 0
+        for i in range(1, N + 1):
+            if condition(N, i):
+                total += 1
+        return total
+    return func
 
 
 def multiple(a, b):
@@ -72,7 +79,10 @@ def multiple(a, b):
     42
     """
     "*** YOUR CODE HERE ***"
-
+    i = 1
+    while(i % a != 0 or i % b != 0):
+        i += 1
+    return i
 
 
 def cycle(f1, f2, f3):
