@@ -36,3 +36,27 @@ def skip_factorial(n):
         return n
     else:
         return n * skip_factorial(n - 2)
+
+
+def is_prime(n):
+    """Returns True if n is a prime number and False otherwise.
+    >>> is_prime(2)
+    True
+    >>> is_prime(16)
+    False
+    >>> is_prime(521)
+    True
+    """
+    "*** YOUR CODE HERE ***"
+    # the parameter for recursive call should be the variable 
+    # number, but not like n in this case
+    if n == 2:
+        return True
+    def f(i):
+        if n % i == 0:
+            return False
+        elif i < (n / 2):
+            return f(i + 1)
+        else:
+            return True
+    return f(2)
