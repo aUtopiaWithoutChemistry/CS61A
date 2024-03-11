@@ -112,8 +112,16 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
+
     def g(n):
+        # return the h func, "my_cycle" in the doc test is the g.
+        # my_cycle take n as parameter, return a func h, which 
+        # implement n round of f1 to f3 on its parameter and make
+        # it as an new algorithm h
+
         def h(x):
+            # return a number, "identity" in the doc test is the h
+            # identity take x as parameter, apply function h on x
             val = x
             for i in range(1, n + 1):
                 if n == 0:
