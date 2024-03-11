@@ -21,3 +21,18 @@ def swipe(n):
         swipe(n % 10)
         swipe(n // 10)
         swipe(n % 10)
+
+
+def skip_factorial(n):
+    """Return the product of positive integers n * (n - 2) * (n - 4) * ...
+
+    >>> skip_factorial(5) # 5 * 3 * 1
+    15
+    >>> skip_factorial(8) # 8 * 6 * 4 * 2
+    384
+    """
+    # base case
+    if n < 3:
+        return n
+    else:
+        return n * skip_factorial(n - 2)
