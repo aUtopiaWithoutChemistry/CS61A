@@ -112,4 +112,19 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
-
+    def g(n):
+        def h(x):
+            val = x
+            for i in range(1, n + 1):
+                if n == 0:
+                    return x
+                else:
+                    if i % 3 == 1:
+                        val = f1(val)
+                    elif i % 3 == 2:
+                        val = f2(val)
+                    elif i % 3 == 0:
+                        val = f3(val)
+            return val
+        return h   
+    return g
