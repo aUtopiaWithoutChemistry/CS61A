@@ -52,6 +52,7 @@ def is_prime(n):
     # number, but not like n in this case
     if n == 2:
         return True
+    @trace1
     def f(i):
         if n % i == 0:
             return False
@@ -60,6 +61,13 @@ def is_prime(n):
         else:
             return True
     return f(2)
+
+
+def trace1(fn):
+    def traced(x):
+        print('Calling', fn, 'on argument', x)
+        return fn(x)
+    return traced
 
 
 def hailstone(n):
