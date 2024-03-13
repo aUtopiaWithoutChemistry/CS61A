@@ -84,6 +84,16 @@ def interleaved_sum(n, odd_func, even_func):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n == 1:
+        return odd_func(n)
+    elif n == 2:
+        return even_func(n) + odd_func(n - 1)
+    else:
+        if interleaved_sum(n - 1, odd_func, even_func) - interleaved_sum(n - 2, odd_func, even_func) == odd_func(n - 1):
+            return even_func(n) + interleaved_sum(n - 1, odd_func, even_func)
+        else:
+            return odd_func(n) + interleaved_sum(n - 1, odd_func, even_func)
+        
 
 
 def next_larger_coin(coin):
