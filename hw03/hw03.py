@@ -159,9 +159,7 @@ def count_coins(total):
                 return contains(next_smaller_coin(biggest))(total)
             elif total >= biggest:
                 return contains(biggest)(total - biggest) + contains(next_smaller_coin(biggest))(total)
-            
         return func
-    
     return contains(25)(total)
         
 
@@ -199,6 +197,17 @@ def move_stack(n, start, end):
     """
     assert 1 <= start <= 3 and 1 <= end <= 3 and start != end, "Bad start/end"
     "*** YOUR CODE HERE ***"
+    help = 6 - start - end
+    if n == 1:
+        print_move(start, end)
+    elif n == 2:
+        print_move(start, help)
+        print_move(start, end)
+        print_move(help, end)
+    else:
+        move_stack(n - 1, start, help)
+        move_stack(1, start, end)
+        move_stack(n - 1, help, end)
 
 
 from operator import sub, mul
