@@ -223,4 +223,5 @@ def make_anonymous_factorial():
     ...     ['Assign', 'AnnAssign', 'AugAssign', 'NamedExpr', 'FunctionDef', 'Recursion'])
     True
     """
+    # identify a anonymous function that return itself
     return (lambda a: a(a))(lambda a: lambda n: 1 if n == 1 else mul(n, a(a)(n - 1)))
