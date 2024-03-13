@@ -148,6 +148,22 @@ def count_coins(total):
     True
     """
     "*** YOUR CODE HERE ***"
+    # helper function
+    def contains(biggest):
+        def func(total):
+            if total == 0:
+                return 1
+            elif biggest == 1 and total > 0:
+                return 1
+            elif biggest > total:
+                return contains(next_smaller_coin(biggest))(total)
+            elif total >= biggest:
+                return contains(biggest)(total - biggest) + contains(next_smaller_coin(biggest))(total)
+            
+        return func
+    
+    return contains(25)(total)
+        
 
 
 def print_move(origin, destination):
