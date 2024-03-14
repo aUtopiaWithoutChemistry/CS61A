@@ -51,7 +51,7 @@ def close_list(s, k):
     >>> close_list(t, 2)  # 2, 3, 4, and 5 are all within 2 of their index
     [2, 4, 3, 5]
     """
-    return [___ for i in range(len(s)) if ___]
+    return [s[i] for i in range(len(s)) if abs(i - s[i]) <= k]
 
 
 from math import sqrt
@@ -67,7 +67,7 @@ def squares(s):
     >>> squares(seq)
     []
     """
-    return [___ for n in s if ___]
+    return [(int)(sqrt(n)) for n in s if (int)(sqrt(n)) == sqrt(n)]
 
 
 def double_eights(n):
@@ -92,6 +92,13 @@ def double_eights(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n // 10 == 0: # only have one digit
+        return False
+    else:
+        if n % 10 == 8 and (n // 10) % 10 == 8:
+            return True
+        else:
+            return double_eights(n // 10)
 
 
 def make_onion(f, g):
@@ -120,10 +127,10 @@ def make_onion(f, g):
     """
     def can_reach(x, y, limit):
         if limit < 0:
-            return ____
+            return False
         elif x == y:
-            return ____
+            return True
         else:
-            return can_reach(____, ____, limit - 1) or can_reach(____, ____, limit - 1)
+            return can_reach(f(x), y, limit - 1) or can_reach(g(x), y, limit - 1)
     return can_reach
 
