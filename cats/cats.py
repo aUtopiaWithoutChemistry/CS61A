@@ -92,6 +92,15 @@ def accuracy(typed, source):
     source_words = split(source)
     # BEGIN PROBLEM 3
     "*** YOUR CODE HERE ***"
+    cnt = 0
+    if typed == '' and source == '':
+        return 100.0
+    elif typed == '':
+        return 0.0
+    for i in range(min(len(typed_words), len(source_words))):
+        if typed_words[i] == source_words[i]:
+            cnt += 1
+    return cnt / len(typed_words) * 100
     # END PROBLEM 3
 
 
