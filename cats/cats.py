@@ -31,6 +31,10 @@ def pick(paragraphs, select, k):
     """
     # BEGIN PROBLEM 1
     "*** YOUR CODE HERE ***"
+    new = [i for i in paragraphs if select(i)]
+    for i in range(len(new), k + 1):
+        new += ['']
+    return new[k]
     # END PROBLEM 1
 
 
